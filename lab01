@@ -2,7 +2,7 @@
 <head>
 	<!--(1) This is the head section, where you set the title of the web page, link in any style sheets,
 	and link to any javascript files/libraries you want to use in the web map-->
-	
+
 	<!-- (2) Notice how you can use the left angle bracket, exclamation and dashes to break the code and leave comments,
 	but always make sure to close with two dashes and right angle bracket -->
 	<title>Lab1yooi3</title>
@@ -36,7 +36,7 @@
 // (9) here you define the longitude, latitude, and zoom level of the user map when they load the page, then follow with the tile layer you want (here it is mapbox)
 
 
-	var mymap =
+	var mymap = L.map('mapid').setView([40.819273, -96.702968], 16);
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
 		attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -59,9 +59,10 @@
 
 	L.polygon([
 		[40.819803, -96.703767],
-		[-96.703247, 40.819787],
 		[40.819588, -96.703754],
-		[-96.703296, 40.819596]
+		[40.819596, -96.703296],
+		[40.819787, -96.703247]
+
 	]).addTo(mymap).bindPopup("I am a polygon.");
 	//(14)three nodes - the above code is drawing is a triangle... you can add more nodes to the polygon by separating each with a comma
 
@@ -85,7 +86,7 @@
 		var MemorialStadium = {
      "type":"Feature",
      "properties": {
-	 "name" : "Memorial Stadium!"
+	 "name" : "Memorial Stadium!",
 	 "amenity": "Stadium",
 	 "popupContent": "This is Memorial Stadium!"
     },
@@ -94,11 +95,11 @@
         "coordinates": [40.8206, -96.7047]
     }
 }.addTo(mymap).bindPopup("This is Memorial Stadium!");
-	
+
 
 //(16) you can also comment out mapped items if you do not want them to draw. note that the var reference above is still present but below i have turned off a layer
 	L.geoJSON(LoveLibrary,{}).addTo(mymap);
-	L.geoJSON(Memorial Stadium,{}).addTo(mymap);
+	L.geoJSON(MemorialStadium,{}).addTo(mymap);
 
 //(17) think about how you would write some pop up text into your Love Library layer. Look at how it is done above. Read online help. Ask your neighbor. There are multiple approaches!
 

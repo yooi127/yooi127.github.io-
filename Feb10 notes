@@ -1,0 +1,8 @@
+#API
+Application programming interface.
+-web-base library
+-goal is to simplifies programming processes, routines, object classes, defines behavior.
+
+Layers are usable in ArcGIS  online. 
+-ArcGIS StoryMaps.
+save shapefile as zipfile (shapefile is not a single file)
